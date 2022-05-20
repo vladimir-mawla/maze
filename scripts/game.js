@@ -1,14 +1,16 @@
 window.onload = (event) => {
     console.log('page is fully loaded');
-    you_lost();
+    start();
     
-    let start = document.getElementById("start")
-    
-    
-    
-    start.addEventListener("mouseover", function( event ) {
-        event.target.style.backgroundColor = "white";
-    })
+
+    function start(){
+        let start = document.getElementById("start")
+        start.addEventListener("mouseover", function( event ) {
+            event.target.style.backgroundColor = "white";
+            you_lost();
+        })
+        
+    }
 
 
     function you_lost() {
