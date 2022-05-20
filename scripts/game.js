@@ -27,6 +27,7 @@ function you_lost() {
         boundary3.classList.add("youlose");
         boundary4.classList.add("youlose");
         boundary5.classList.add("youlose");
+        game = false;
     })
     boundary2.addEventListener("mouseover", function( event ) {
         boundary1.classList.add("youlose");
@@ -34,6 +35,7 @@ function you_lost() {
         boundary3.classList.add("youlose");
         boundary4.classList.add("youlose");
         boundary5.classList.add("youlose");
+        game = false;
     })
     boundary3.addEventListener("mouseover", function( event ) {
         boundary1.classList.add("youlose");
@@ -41,6 +43,7 @@ function you_lost() {
         boundary3.classList.add("youlose");
         boundary4.classList.add("youlose");
         boundary5.classList.add("youlose");
+        game = false;
     })
     boundary4.addEventListener("mouseover", function( event ) {
         boundary1.classList.add("youlose");
@@ -48,6 +51,7 @@ function you_lost() {
         boundary3.classList.add("youlose");
         boundary4.classList.add("youlose");
         boundary5.classList.add("youlose");
+        game = false;
     })
     boundary5.addEventListener("mouseover", function( event ) {
         boundary1.classList.add("youlose");
@@ -55,7 +59,24 @@ function you_lost() {
         boundary3.classList.add("youlose");
         boundary4.classList.add("youlose");
         boundary5.classList.add("youlose");
+        game = false;
     })
     document.getElementById("status").innerHTML = "You Lost"
-    game = false
+    
+    
+}
+function restart() {
+    if (game == false) {
+        console.log("you restarted")
+        game = true;
+        start.addEventListener("mouseover", function( event ) {
+            event.target.style.backgroundColor = "#8888ff;";
+            boundary1.classList.remove("youlose");
+            boundary2.classList.remove("youlose");
+            boundary3.classList.remove("youlose");
+            boundary4.classList.remove("youlose");
+            boundary5.classList.remove("youlose");
+        })
+        
+    }
 }
