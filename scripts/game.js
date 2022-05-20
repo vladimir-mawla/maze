@@ -2,6 +2,8 @@ window.onload = (event) => {
     console.log('page is fully loaded');
     start();
 };
+var game = true;
+
 function start(){
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function( event ) {
@@ -55,4 +57,5 @@ function you_lost() {
         boundary5.classList.add("youlose");
     })
     document.getElementById("status").innerHTML = "You Lost"
+    game = false
 }
