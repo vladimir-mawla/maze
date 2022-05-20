@@ -63,20 +63,31 @@ function you_lost() {
     })
     document.getElementById("status").innerHTML = "You Lost"
     
-    
+    restart()
 }
 function restart() {
     if (game == false) {
         console.log("you restarted")
         game = true;
-        start.addEventListener("mouseover", function( event ) {
-            event.target.style.backgroundColor = "#8888ff;";
-            boundary1.classList.remove("youlose");
-            boundary2.classList.remove("youlose");
-            boundary3.classList.remove("youlose");
-            boundary4.classList.remove("youlose");
-            boundary5.classList.remove("youlose");
-        })
+        reset()
         
     }
+}
+function reset(){
+    let boundary1 = document.getElementById("boundary1")
+    let boundary2 = boundary1.nextElementSibling;
+    let boundary3 = boundary2.nextElementSibling;
+    let boundary4 = boundary3.nextElementSibling;
+    let boundary5 = boundary4.nextElementSibling;
+    
+    let start = document.getElementById("start")
+    start.addEventListener("mouseover", function( event ) {
+        event.target.style.backgroundColor = "#88ff88";
+        boundary1.classList.remove("youlose"); 
+        boundary2.classList.remove("youlose"); 
+        boundary3.classList.remove("youlose"); 
+        boundary4.classList.remove("youlose"); 
+        boundary5.classList.remove("youlose"); 
+    })
+    
 }
