@@ -1,7 +1,7 @@
 window.onload = (event) => {
     console.log('page is fully loaded');
     start();
-    
+};
 
     function start(){
         let start = document.getElementById("start")
@@ -56,4 +56,3 @@ window.onload = (event) => {
         boundary5.classList.add("youlose");
     })
 }
-};
