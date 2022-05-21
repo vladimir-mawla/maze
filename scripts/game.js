@@ -83,7 +83,7 @@ function restart() {
 
     }
 }
-function reset(){
+function reset_bounderies(){
     let boundary1 = document.getElementById("boundary1")
     let boundary2 = boundary1.nextElementSibling;
     let boundary3 = boundary2.nextElementSibling;
@@ -91,7 +91,7 @@ function reset(){
     let boundary5 = boundary4.nextElementSibling;
 
     let start = document.getElementById("start")
-    start.addEventListener("click", function( event ) {
+    start.addEventListener("mouseover", function( event ) {
         event.target.style.backgroundColor = "#88ff88";
         boundary1.classList.remove("youlose"); 
         boundary2.classList.remove("youlose"); 
