@@ -74,6 +74,7 @@ function end() {
         });
 
     }
+    reset();
 }
 function reset_game() {
     game= true;
