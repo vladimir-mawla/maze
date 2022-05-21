@@ -84,7 +84,7 @@ function restart() {
     if (game == false) {
         game = true;
         reset_bounderies()
-
+        reset_game()
     }
 }
 function reset_bounderies(){
