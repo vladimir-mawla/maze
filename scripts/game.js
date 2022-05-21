@@ -118,3 +118,23 @@ function end() {
         game = false;
 }
 }
+function reset_game(){
+    let boundary1 = document.getElementById("boundary1")
+    let boundary2 = boundary1.nextElementSibling;
+    let boundary3 = boundary2.nextElementSibling;
+    let boundary4 = boundary3.nextElementSibling;
+    let boundary5 = boundary4.nextElementSibling;
+
+    let start = document.getElementById("start")
+    start.addEventListener("click", function( event ) {
+        score = 0
+        boundary1.classList.remove("youlose"); 
+        boundary2.classList.remove("youlose"); 
+        boundary3.classList.remove("youlose"); 
+        boundary4.classList.remove("youlose"); 
+        boundary5.classList.remove("youlose");
+        document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
+    })
+    start();
+    
+}
