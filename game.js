@@ -9,6 +9,10 @@ function reset() {
     button.addEventListener('click', reset_game)
     button.addEventListener('mouseover', reset_bounderies)
 }
+function alert(){
+    const mouseTarget = document.getElementById('game');
+    mouseTarget.addEventListener('mouseleave', cheater);
+}
 
 
 function start() {
@@ -17,6 +21,7 @@ function start() {
         bounds()
         end();
         print_score()
+        alert()
     })
 
 }
@@ -52,7 +57,7 @@ if (game == false) {
     print_score()
 }
 function reset_bounderies() {
-    game= true;
+    game = true;
     document.querySelectorAll(".boundary:not(.example)").forEach(item => {
         item.classList.remove("youlose")
         document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
@@ -77,12 +82,19 @@ function end() {
     reset();
 }
 function reset_game() {
-    game= true;
+    game = true;
     score = 0;
     print_score();
     start();
 }
 
-function print_score(){
+function print_score() {
     let a = document.getElementById("game").nextElementSibling.nextElementSibling.innerHTML = "Your score: " + score;
 }
+
+function cheater() {
+    if(game == true){
+        score = 0;
+        print_score();
+        alert("Cheater!");
+}}
