@@ -76,7 +76,8 @@ if(game == true){
             
             document.getElementById("status").innerHTML = "You Lost"
         })
-    
+    score -= 10;
+    console.log(score)
 }
     restart()
 }
@@ -109,10 +110,11 @@ function reset_bounderies(){
 }
 function end() {
     if (game == true) {
-        
+
         let end = document.getElementById("end")
         end.addEventListener("mouseover", function( event ) {
-            
+            score += 5;
+            console.log(score)
             document.getElementById("status").innerHTML = "You Won";
             game = false;
         });
