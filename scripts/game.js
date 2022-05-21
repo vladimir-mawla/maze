@@ -22,50 +22,55 @@ function you_lost() {
     let boundary5 = boundary4.nextElementSibling;
 
     boundary1.addEventListener("mouseover", function( event ) {
-        boundary1.classList.add("youlose");
-        boundary2.classList.add("youlose");
-        boundary3.classList.add("youlose");
-        boundary4.classList.add("youlose");
-        boundary5.classList.add("youlose");
-        game = false;
-        document.getElementById("status").innerHTML = "You Lost"
-    })
+        if (game == false) {
+            boundary1.classList.add("youlose");
+            boundary2.classList.add("youlose");
+            boundary3.classList.add("youlose");
+            boundary4.classList.add("youlose");
+            boundary5.classList.add("youlose");
+            game = false;
+            document.getElementById("status").innerHTML = "You Lost"
+    }})
     boundary2.addEventListener("mouseover", function( event ) {
-        boundary1.classList.add("youlose");
-        boundary2.classList.add("youlose");
-        boundary3.classList.add("youlose");
-        boundary4.classList.add("youlose");
-        boundary5.classList.add("youlose");
-        game = false;
-        document.getElementById("status").innerHTML = "You Lost"
-    })
+        if (game == false) {
+            boundary1.classList.add("youlose");
+            boundary2.classList.add("youlose");
+            boundary3.classList.add("youlose");
+            boundary4.classList.add("youlose");
+            boundary5.classList.add("youlose");
+            game = false;
+            document.getElementById("status").innerHTML = "You Lost"
+        }})
     boundary3.addEventListener("mouseover", function( event ) {
-        boundary1.classList.add("youlose");
-        boundary2.classList.add("youlose");
-        boundary3.classList.add("youlose");
-        boundary4.classList.add("youlose");
-        boundary5.classList.add("youlose");
-        game = false;
-        document.getElementById("status").innerHTML = "You Lost"
-    })
+        if (game == false) {
+            boundary1.classList.add("youlose");
+            boundary2.classList.add("youlose");
+            boundary3.classList.add("youlose");
+            boundary4.classList.add("youlose");
+            boundary5.classList.add("youlose");
+            game = false;
+            document.getElementById("status").innerHTML = "You Lost"
+        }})
     boundary4.addEventListener("mouseover", function( event ) {
-        boundary1.classList.add("youlose");
-        boundary2.classList.add("youlose");
-        boundary3.classList.add("youlose");
-        boundary4.classList.add("youlose");
-        boundary5.classList.add("youlose");
-        game = false;
-        document.getElementById("status").innerHTML = "You Lost"
-    })
+        if (game == false) {
+            boundary1.classList.add("youlose");
+            boundary2.classList.add("youlose");
+            boundary3.classList.add("youlose");
+            boundary4.classList.add("youlose");
+            boundary5.classList.add("youlose");
+            game = false;
+            document.getElementById("status").innerHTML = "You Lost"
+        }})
     boundary5.addEventListener("mouseover", function( event ) {
-        boundary1.classList.add("youlose");
-        boundary2.classList.add("youlose");
-        boundary3.classList.add("youlose");
-        boundary4.classList.add("youlose");
-        boundary5.classList.add("youlose");
-        game = false;
-        document.getElementById("status").innerHTML = "You Lost"
-    })
+        if (game == false) {
+            boundary1.classList.add("youlose");
+            boundary2.classList.add("youlose");
+            boundary3.classList.add("youlose");
+            boundary4.classList.add("youlose");
+            boundary5.classList.add("youlose");
+            game = false;
+            document.getElementById("status").innerHTML = "You Lost"
+        }})
     
     
     restart()
