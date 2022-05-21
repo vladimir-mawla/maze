@@ -1,10 +1,10 @@
 window.onload = (event) => {
-    console.log('page is fully loaded');
     start();
 };
 var game = true;
 var score = 0;
-function start(){
+
+function start() {
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function( event ) {
         you_lost();
@@ -82,7 +82,6 @@ function you_lost() {
 }
 function restart() {
     if (game == false) {
-        console.log("you restarted")
         game = true;
         reset_bounderies()
 
@@ -110,7 +109,6 @@ function reset_bounderies(){
 }
 function end() {
     if (game == true) {
-        console.log("you won")
         score += 5;
         let end = document.getElementById("end")
         end.addEventListener("mouseover", function( event ) {
