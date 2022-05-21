@@ -4,6 +4,13 @@ window.onload = (event) => {
 var game = true;
 var score = 0;
 
+function reset() {
+    const button = document.getElementById("start")
+    button.addEventListener('click', reset_game)
+    button.addEventListener('mouseover', reset_bounderies)
+}
+
+
 function start() {
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function (event) {
@@ -36,8 +43,7 @@ function you_lost() {
 function restart() {
     if (game == false) {
 
-        reset_bounderies()
-        reset_game()
+        reset()
     }
 }
 
@@ -46,15 +52,10 @@ if (game == false) {
     print_score()
 }
 function reset_bounderies() {
-
-
-    let start = document.getElementById("start")
-    start.addEventListener("mouseover", function (event) {
-        game = true;
-        document.querySelectorAll(".boundary:not(.example)").forEach(item => {
-            item.classList.remove("youlose")
-            document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
-        })
+    game= true;
+    document.querySelectorAll(".boundary:not(.example)").forEach(item => {
+        item.classList.remove("youlose")
+        document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
     })
     start();
 
@@ -75,17 +76,9 @@ function end() {
     }
 }
 function reset_game() {
-
-    let start = document.getElementById("start")
-    start.addEventListener("click", function (event) {
-        game = true;
-        score = 0;
-        print_score()
-        document.querySelectorAll(".boundary:not(.example)").forEach(item => {
-            item.classList.remove("youlose")
-            document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
-        })
-    })
+    game= true;
+    score = 0;
+    print_score();
     start();
 }
 
