@@ -9,6 +9,7 @@ function start() {
     start.addEventListener("mouseover", function (event) {
         bounds()
         end();
+        print_score()
     })
 
 }
@@ -27,7 +28,7 @@ function you_lost() {
 
         if (game == false) {
             score -= 10;
-            console.log(score)
+            print_score()
         }
         restart()
     }
@@ -42,7 +43,7 @@ function restart() {
 
 if (game == false) {
     score -= 10;
-    console.log(score)
+    print_score()
 }
 function reset_bounderies() {
 
@@ -65,7 +66,7 @@ function end() {
         end.addEventListener("mouseover", function (event) {
             if (game == true) {
                 score += 5;
-                console.log(score)
+                print_score()
                 document.getElementById("status").innerHTML = "You Won";
                 game = false;
             }
@@ -79,11 +80,15 @@ function reset_game() {
     start.addEventListener("click", function (event) {
         game = true;
         score = 0;
+        print_score()
         document.querySelectorAll(".boundary:not(.example)").forEach(item => {
             item.classList.remove("youlose")
             document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
         })
     })
     start();
+}
 
+function print_score(){
+    let a = document.getElementById("game").nextElementSibling.nextElementSibling.innerHTML = "Your score: " + score;
 }
