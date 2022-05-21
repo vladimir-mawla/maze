@@ -85,7 +85,7 @@ function reset(){
     let boundary5 = boundary4.nextElementSibling;
 
     let start = document.getElementById("start")
-    start.addEventListener("mouseover", function( event ) {
+    start.addEventListener("click", function( event ) {
         event.target.style.backgroundColor = "#88ff88";
         boundary1.classList.remove("youlose"); 
         boundary2.classList.remove("youlose"); 
