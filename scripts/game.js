@@ -7,7 +7,6 @@ var game = true;
 function start(){
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function( event ) {
-        event.target.style.backgroundColor = "white";
         you_lost();
     })
     
@@ -79,7 +78,7 @@ function reset(){
     let boundary3 = boundary2.nextElementSibling;
     let boundary4 = boundary3.nextElementSibling;
     let boundary5 = boundary4.nextElementSibling;
-    
+
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function( event ) {
         event.target.style.backgroundColor = "#88ff88";
@@ -89,5 +88,6 @@ function reset(){
         boundary4.classList.remove("youlose"); 
         boundary5.classList.remove("youlose"); 
     })
+    start();
     
 }
