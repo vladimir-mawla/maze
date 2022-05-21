@@ -19,6 +19,7 @@ function bounds() {
     
 }
 function you_lost(){
+    if (game == true){
     let boundary1 = document.getElementById("boundary1")
     let boundary2 = boundary1.nextElementSibling;
     let boundary3 = boundary2.nextElementSibling;
@@ -34,7 +35,7 @@ function you_lost(){
     if (game==false){
         score -= 10;
         console.log(score)
-}}
+}}}
 /*
 function you_lost() {
     let boundary1 = document.getElementById("boundary1")
