@@ -74,17 +74,15 @@ function end() {
 }
 }
 function reset_game(){
-    let boundary1 = document.getElementById("boundary1")
-    let boundary2 = boundary1.nextElementSibling;
-    let boundary3 = boundary2.nextElementSibling;
-    let boundary4 = boundary3.nextElementSibling;
-    let boundary5 = boundary4.nextElementSibling;
 
     let start = document.getElementById("start")
     start.addEventListener("click", function( event ) {
         game = true;
         score = 0;
-        document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
+        document.querySelectorAll(".boundary:not(.example)").forEach(item => {
+            item.classList.remove("youlose")
+            document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
+        })
     })
     start();
     
