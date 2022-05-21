@@ -20,7 +20,7 @@ function you_lost() {
     let boundary3 = boundary2.nextElementSibling;
     let boundary4 = boundary3.nextElementSibling;
     let boundary5 = boundary4.nextElementSibling;
-
+if(game == true){
     boundary1.addEventListener("mouseover", function( event ) {
 
             boundary1.classList.add("youlose");
@@ -77,12 +77,12 @@ function you_lost() {
             document.getElementById("status").innerHTML = "You Lost"
         })
     
-    
+}
     restart()
 }
 function restart() {
     if (game == false) {
-        game = true;
+        
         reset_bounderies()
         reset_game()
     }
@@ -96,7 +96,7 @@ function reset_bounderies(){
 
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function( event ) {
-
+        game = true;
         boundary1.classList.remove("youlose"); 
         boundary2.classList.remove("youlose"); 
         boundary3.classList.remove("youlose"); 
@@ -114,8 +114,9 @@ function end() {
         end.addEventListener("mouseover", function( event ) {
             
             document.getElementById("status").innerHTML = "You Won";
+            game = false;
         });
-        game = false;
+        
 }
 }
 function reset_game(){
@@ -127,12 +128,8 @@ function reset_game(){
 
     let start = document.getElementById("start")
     start.addEventListener("click", function( event ) {
-
-        boundary1.classList.remove("youlose"); 
-        boundary2.classList.remove("youlose"); 
-        boundary3.classList.remove("youlose"); 
-        boundary4.classList.remove("youlose"); 
-        boundary5.classList.remove("youlose");
+        game = true;
+        score = 0;
         document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
     })
     start();
