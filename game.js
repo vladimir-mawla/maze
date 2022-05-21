@@ -1,20 +1,23 @@
+/* Adding onload function */
 window.onload = (event) => {
     start();
 };
+/* Initializing game and score variables */
 var game = true;
 var score = 0;
-
+/* Creating function to reset game */
 function reset() {
     const button = document.getElementById("start")
     button.addEventListener('click', reset_game)
     button.addEventListener('mouseover', reset_bounderies)
 }
+/* Creating function to alert cheater */
 function alerts(){
     const mouseTarget = document.getElementById('game');
     mouseTarget.addEventListener('mouseleave', cheater);
 }
 
-
+/* Creating function to start game */
 function start() {
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function (event) {
@@ -25,12 +28,14 @@ function start() {
     })
 
 }
+/* Creating function to select all bounderies except the last one*/
 function bounds() {
     document.querySelectorAll(".boundary:not(.example)").forEach(item => {
         item.addEventListener("mouseover", you_lost)
     });
 
 }
+/* Creating a function that ends the game */
 function you_lost() {
     if (game == true) {
         document.querySelectorAll(".boundary:not(.example)").forEach(item => {
@@ -45,6 +50,7 @@ function you_lost() {
         restart()
     }
 }
+/* Creating function to restart the game */
 function restart() {
     if (game == false) {
 
@@ -52,10 +58,7 @@ function restart() {
     }
 }
 
-if (game == false) {
-    score -= 10;
-    print_score()
-}
+/* Adding function to reset boundaries */
 function reset_bounderies() {
     game = true;
     document.querySelectorAll(".boundary:not(.example)").forEach(item => {
@@ -65,6 +68,7 @@ function reset_bounderies() {
     start();
 
 }
+/* Adding function to end game */
 function end() {
     if (game == true) {
 
@@ -81,17 +85,18 @@ function end() {
     }
     reset();
 }
+/* Adding function to reset game */
 function reset_game() {
     game = true;
     score = 0;
     print_score();
     start();
 }
-
+/* Adding function to print score */
 function print_score() {
     let a = document.getElementById("game").nextElementSibling.nextElementSibling.innerHTML = "Your score: " + score;
 }
-
+/* Adding function to catch cheaters */
 function cheater() {
     if(game == true){
         alert("Cheater!");
