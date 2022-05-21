@@ -76,10 +76,12 @@ function end() {
 
         let end = document.getElementById("end")
         end.addEventListener("mouseover", function( event ) {
-            score += 5;
-            console.log(score)
+            if (game == true) {
+                score += 5;
+                console.log(score)
             document.getElementById("status").innerHTML = "You Won";
             game = false;
+            }
         });
         
 }
