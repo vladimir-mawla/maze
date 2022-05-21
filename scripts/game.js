@@ -35,75 +35,9 @@ function you_lost(){
     if (game==false){
         score -= 10;
         console.log(score)
-}}}
-/*
-function you_lost() {
-    let boundary1 = document.getElementById("boundary1")
-    let boundary2 = boundary1.nextElementSibling;
-    let boundary3 = boundary2.nextElementSibling;
-    let boundary4 = boundary3.nextElementSibling;
-    let boundary5 = boundary4.nextElementSibling;
-if(game == true){
-    boundary1.addEventListener("mouseover", function( event ) {
-
-            boundary1.classList.add("youlose");
-            boundary2.classList.add("youlose");
-            boundary3.classList.add("youlose");
-            boundary4.classList.add("youlose");
-            boundary5.classList.add("youlose");
-            game = false;
-            
-            document.getElementById("status").innerHTML = "You Lost"
-    })
-    boundary2.addEventListener("mouseover", function( event ) {
-        
-            boundary1.classList.add("youlose");
-            boundary2.classList.add("youlose");
-            boundary3.classList.add("youlose");
-            boundary4.classList.add("youlose");
-            boundary5.classList.add("youlose");
-            game = false;
-            
-            document.getElementById("status").innerHTML = "You Lost"
-        })
-    boundary3.addEventListener("mouseover", function( event ) {
-        
-            boundary1.classList.add("youlose");
-            boundary2.classList.add("youlose");
-            boundary3.classList.add("youlose");
-            boundary4.classList.add("youlose");
-            boundary5.classList.add("youlose");
-            game = false;
-            
-            document.getElementById("status").innerHTML = "You Lost"
-        })
-    boundary4.addEventListener("mouseover", function( event ) {
-     
-            boundary1.classList.add("youlose");
-            boundary2.classList.add("youlose");
-            boundary3.classList.add("youlose");
-            boundary4.classList.add("youlose");
-            boundary5.classList.add("youlose");
-            game = false;
-            
-            document.getElementById("status").innerHTML = "You Lost"
-        })
-    boundary5.addEventListener("mouseover", function( event ) {
-     
-            boundary1.classList.add("youlose");
-            boundary2.classList.add("youlose");
-            boundary3.classList.add("youlose");
-            boundary4.classList.add("youlose");
-            boundary5.classList.add("youlose");
-            game = false;
-            
-            document.getElementById("status").innerHTML = "You Lost"
-        })
-    
-
-}
-
+    }
     restart()
+    }
 }
 function restart() {
     if (game == false) {
@@ -112,7 +46,7 @@ function restart() {
         reset_game()
     }
 }
-*/
+
 if (game == false) {
     score -= 10;
     console.log(score)
