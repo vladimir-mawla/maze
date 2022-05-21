@@ -9,7 +9,7 @@ function reset() {
     button.addEventListener('click', reset_game)
     button.addEventListener('mouseover', reset_bounderies)
 }
-function alert(){
+function alerts(){
     const mouseTarget = document.getElementById('game');
     mouseTarget.addEventListener('mouseleave', cheater);
 }
@@ -21,7 +21,7 @@ function start() {
         bounds()
         end();
         print_score()
-        alert()
+        alerts()
     })
 
 }
@@ -94,7 +94,8 @@ function print_score() {
 
 function cheater() {
     if(game == true){
+        alert("Cheater!");
         score = 0;
         print_score();
-        alert("Cheater!");
+
 }}
