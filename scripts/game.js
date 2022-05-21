@@ -96,7 +96,7 @@ function reset_bounderies(){
 
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function( event ) {
-        
+
         boundary1.classList.remove("youlose"); 
         boundary2.classList.remove("youlose"); 
         boundary3.classList.remove("youlose"); 
@@ -127,7 +127,7 @@ function reset_game(){
 
     let start = document.getElementById("start")
     start.addEventListener("click", function( event ) {
-        score = 0
+
         boundary1.classList.remove("youlose"); 
         boundary2.classList.remove("youlose"); 
         boundary3.classList.remove("youlose"); 
