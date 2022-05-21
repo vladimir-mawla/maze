@@ -8,6 +8,7 @@ function start(){
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function( event ) {
         you_lost();
+        end();
     })
     
 }
@@ -96,4 +97,15 @@ function reset(){
     })
     start();
     
+}
+function end() {
+    if (game == true) {
+        console.log("you won")
+        let end = document.getElementById("end")
+        end.addEventListener("mouseover", function( event ) {
+            event.target.style.backgroundColor = "#88ff88";
+            document.getElementById("status").innerHTML = "You Won";
+        });
+        game = false;
+}
 }
