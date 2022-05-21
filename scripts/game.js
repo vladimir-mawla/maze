@@ -79,7 +79,7 @@ function restart() {
     if (game == false) {
         console.log("you restarted")
         game = true;
-        reset()
+        reset_bounderies()
 
     }
 }
@@ -92,7 +92,7 @@ function reset_bounderies(){
 
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function( event ) {
-        event.target.style.backgroundColor = "#88ff88";
+        
         boundary1.classList.remove("youlose"); 
         boundary2.classList.remove("youlose"); 
         boundary3.classList.remove("youlose"); 
@@ -108,7 +108,7 @@ function end() {
         console.log("you won")
         let end = document.getElementById("end")
         end.addEventListener("mouseover", function( event ) {
-            event.target.style.backgroundColor = "#88ff88";
+            
             document.getElementById("status").innerHTML = "You Won";
         });
         game = false;
