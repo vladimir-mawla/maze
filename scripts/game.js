@@ -69,7 +69,7 @@ function restart() {
         console.log("you restarted")
         game = true;
         reset()
-        
+
     }
 }
 function reset(){
@@ -86,7 +86,8 @@ function reset(){
         boundary2.classList.remove("youlose"); 
         boundary3.classList.remove("youlose"); 
         boundary4.classList.remove("youlose"); 
-        boundary5.classList.remove("youlose"); 
+        boundary5.classList.remove("youlose");
+        document.getElementById("status").innerHTML = `Begin by moving your mouse over the "S".`
     })
     start();
     
