@@ -107,7 +107,9 @@ function cheater() {
 
 var ms = 0;
 var sec = 0;
-timer == false;
+var timer = false;
+let stopwatch = document.getElementById("live_count")
+
 /*Adding start timer function */
 function startTimer () {
 
