@@ -132,9 +132,13 @@ function startTimer () {
       
 }
 }
-
+/* Adding stop timer function */
 function stopTimer() {
     if (timer == true) {
       timer = false;
     }
+}  
+/* Adding reset timer function */
+function resetTimer() {
+    stopwatch.innerHTML = '00:00:00';
 }
