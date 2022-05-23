@@ -32,7 +32,10 @@ function start() {
     start.addEventListener("mouseleave", function (event) { 
         startTimer()
     })
-    
+    const best = document.getElementById('best_count');
+    best.innerHTML = "00:" + Math.min(...record);
+    const last = document.getElementById('last_count');
+    last.innerHTML = "00:" + record[-1];
 
 
 }
@@ -103,7 +106,7 @@ function end() {
 function reset_game() {
     game = true;
     score = 0;
-    resetTimer();
+    resetTimer()
     print_score();
     start();
 }
@@ -123,60 +126,3 @@ function cheater() {
 
 
 
-var min = 0;
-var sec = 0;
-record = []
-
-
-function startTimer() {
-  if (stoptime == true) {
-        stoptime = false;
-        timerCycle();
-    }
-}
-function stopTimer() {
-  if (stoptime == false) {
-    stoptime = true;
-    let start = document.getElementById("start")
-    start.removeEventListener("mouseover", startTimer)
-
-  }
-}
-function resetTimer() {
-    const time = document.getElementById('live_count');
-    time.innerHTML = "00:00";
-    stoptime = true;
-  
-    sec = 0;
-    min = 0;
-}
-
-function timerCycle() {
-    if (stoptime == false) {
-    sec = parseInt(sec);
-    min = parseInt(min);
-
-
-    sec = sec + 1;
-
-    if (sec == 60) {
-      min = min + 1;
-      sec = 0;
-    }
-    
-
-    if (sec < 10 || sec == 0) {
-      sec = '0' + sec;
-    }
-    if (min < 10 || min == 0) {
-      min = '0' + min;
-    }
-    
-    const time = document.getElementById('live_count');
-    const last = document.getElementById('last_count');
-    
-    time.innerHTML = min + ':' + sec;
-    last.innerHTML = min + ':' + sec;
-    setTimeout("timerCycle()", 1000);
-  }
-}
