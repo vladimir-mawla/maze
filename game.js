@@ -132,3 +132,9 @@ function startTimer () {
       
 }
 }
+
+function stopTimer() {
+    if (timer == true) {
+      timer = false;
+    }
+}
