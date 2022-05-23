@@ -105,3 +105,30 @@ function cheater() {
 
 }}
 
+var ms = 0;
+var sec = 0;
+timer == false;
+
+function startTimer () {
+
+    if (timer == false) {
+        timer = true;
+
+        ms = parseInt(ms);
+        sec = parseInt(sec);
+    
+        ms = ms + 1;
+    
+        if (ms == 10) {
+          sec = sec + 1;
+          ms = 0;
+        }
+        if (ms < 10) {
+        ms = '0' + ms;
+        }
+        if (sec < 10) {
+        sec = '0' + sec;
+        }
+      
+}
+}
