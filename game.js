@@ -25,6 +25,10 @@ function start() {
         end();
         print_score()
         alerts()
+        resetTimer()
+    })
+    start.addEventListener("mouseleave", function (event) { 
+        startTimer()
     })
 
 }
@@ -112,7 +116,7 @@ let stopwatch = document.getElementById("live_count")
 
 /*Adding start timer function */
 function startTimer () {
-
+    console.log("hey there!")
     if (timer == false) {
         timer = true;
 
@@ -142,5 +146,8 @@ function stopTimer() {
 }  
 /* Adding reset timer function */
 function resetTimer() {
-    stopwatch.innerHTML = '00:00:00';
+    stopwatch.innerHTML = "00:00:00";
+    timer = false;
+    ms = 0;
+    sec = 0;
 }
