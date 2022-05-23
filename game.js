@@ -94,7 +94,7 @@ function reset_game() {
 }
 /* Adding function to print score */
 function print_score() {
-    let a = document.getElementById("game").nextElementSibling.nextElementSibling.innerHTML = "Your score: " + score;
+    let a = document.getElementById("game").nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = "Your score: " + score;
 }
 /* Adding function to catch cheaters */
 function cheater() {
@@ -108,7 +108,7 @@ function cheater() {
 var ms = 0;
 var sec = 0;
 timer == false;
-
+/*Adding start timer function */
 function startTimer () {
 
     if (timer == false) {
