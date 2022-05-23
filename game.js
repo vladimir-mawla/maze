@@ -5,12 +5,11 @@ window.onload = (event) => {
 /* Initializing game and score variables */
 var game = true;
 var score = 0;
-var stoptime = true;
 /* Creating function to reset game */
 function reset() {
     const button = document.getElementById("start")
     button.addEventListener('click', reset_game)
-    button.addEventListener('mouseover', reset_boundaries)
+    button.addEventListener('mouseover', reset_bounderies)
 }
 /* Creating function to alert cheater */
 function alerts(){
@@ -22,31 +21,19 @@ function alerts(){
 function start() {
     let start = document.getElementById("start")
     start.addEventListener("mouseover", function (event) {
-        
         bounds()
         end();
         print_score()
         alerts()
-        resetTimer()
     })
-    start.addEventListener("mouseleave", function (event) { 
-        startTimer()
-    })
-    const best = document.getElementById('best_count');
-    best.innerHTML = "00:" + Math.min(...record);
-    const last = document.getElementById('last_count');
-    last.innerHTML = "00:" + record[-1];
-
 
 }
 /* Creating function to select all bounderies except the last one*/
 function bounds() {
     document.querySelectorAll(".boundary:not(.example)").forEach(item => {
         item.addEventListener("mouseover", you_lost)
-        
     });
-    
-    
+
 }
 /* Creating a function that ends the game */
 function you_lost() {
@@ -54,7 +41,6 @@ function you_lost() {
         document.querySelectorAll(".boundary:not(.example)").forEach(item => {
             item.classList.add("youlose")
             game = false;
-            stopTimer();
         });
 
         if (game == false) {
@@ -73,7 +59,7 @@ function restart() {
 }
 
 /* Adding function to reset boundaries */
-function reset_boundaries() {
+function reset_bounderies() {
     game = true;
     document.querySelectorAll(".boundary:not(.example)").forEach(item => {
         item.classList.remove("youlose")
@@ -91,13 +77,10 @@ function end() {
             if (game == true) {
                 score += 5;
                 print_score()
-                stopTimer();
-                resetTimer()
                 document.getElementById("status").innerHTML = "You Won";
                 game = false;
             }
         });
-        
 
     }
     reset();
@@ -106,13 +89,12 @@ function end() {
 function reset_game() {
     game = true;
     score = 0;
-    resetTimer()
     print_score();
     start();
 }
 /* Adding function to print score */
 function print_score() {
-    let a = document.getElementById("game").nextElementSibling.nextElementSibling.nextElementSibling.innerHTML = "Your score: " + score;
+    let a = document.getElementById("game").nextElementSibling.nextElementSibling.innerHTML = "Your score: " + score;
 }
 /* Adding function to catch cheaters */
 function cheater() {
@@ -120,13 +102,6 @@ function cheater() {
         alert("Cheater!");
         score = 0;
         print_score();
-        resetTimer()
 
 }}
 
-var ms = 0;
-var sec = 0;
-
-function startTimer () {
-    
-}
