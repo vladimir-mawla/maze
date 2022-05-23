@@ -124,5 +124,5 @@ function cheater() {
 
 }}
 
-
-
+var ms = 0;
+var sec = 0;
