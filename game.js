@@ -126,7 +126,7 @@ function cheater() {
 
 
 
-var min = 0;
+var ms = 0;
 var sec = 0;
 record = []
 
@@ -150,36 +150,36 @@ function resetTimer() {
     time.innerHTML = "00:00";
     stoptime = true;
   
+    ms = 0;
     sec = 0;
-    min = 0;
 }
 
 function timerCycle() {
     if (stoptime == false) {
+    ms = parseInt(ms);
     sec = parseInt(sec);
-    min = parseInt(min);
 
 
-    sec = sec + 1;
+    ms = ms + 1;
 
-    if (sec == 60) {
-      min = min + 1;
-      sec = 0;
+    if (ms == 10) {
+      sec = sec + 1;
+      ms = 0;
     }
     
 
+    if (ms < 10 || ms == 0) {
+      ms = '0' + ms;
+    }
     if (sec < 10 || sec == 0) {
       sec = '0' + sec;
-    }
-    if (min < 10 || min == 0) {
-      min = '0' + min;
     }
     
     const time = document.getElementById('live_count');
     const last = document.getElementById('last_count');
     
-    time.innerHTML = min + ':' + sec;
-    last.innerHTML = min + ':' + sec;
-    setTimeout("timerCycle()", 1000);
+    time.innerHTML = sec + ':' + ms;
+    last.innerHTML = sec + ':' + ms;
+    setTimeout("timerCycle()", 100);
   }
 }
