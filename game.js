@@ -27,15 +27,13 @@ function start() {
         end();
         print_score()
         alerts()
-        resetTimer()
+        
     })
     start.addEventListener("mouseleave", function (event) { 
         startTimer()
     })
-    const best = document.getElementById('best_count');
-    best.innerHTML = "00:" + Math.min(...record);
-    const last = document.getElementById('last_count');
-    last.innerHTML = "00:" + record[-1];
+
+
 
 
 }
@@ -97,8 +95,12 @@ function end() {
                 game = false;
             }
         });
-        
-
+        end.addEventListener("mouseover", function (event) {
+            const last = document.getElementById('last_count');
+            last.innerHTML = record.at(-1) + ":" + record_ms.at(-1);
+            const best = document.getElementById('best_count');
+            best.innerHTML = "0" + Math.min(...record) + ":" +"0"+ Math.min(...record_ms);
+    })
     }
     reset();
 }
@@ -120,7 +122,7 @@ function cheater() {
         alert("Cheater!");
         score = 0;
         print_score();
-        resetTimer()
+        resetTimer() //lkkklkllkllllllllllllllllllllllllllllllll//
 
 }}
 
@@ -129,6 +131,7 @@ function cheater() {
 var ms = 0;
 var sec = 0;
 record = []
+record_ms=[]
 
 
 function startTimer() {
@@ -142,11 +145,16 @@ function stopTimer() {
     stoptime = true;
     let start = document.getElementById("start")
     start.removeEventListener("mouseover", startTimer)
-
+    record.push(sec)
+    record_ms.push(ms)
   }
 }
 function resetTimer() {
     const time = document.getElementById('live_count');
+    const last = document.getElementById('last_count');
+    const best = document.getElementById('best_count');
+    last.innerHTML = "00:00";
+    best.innerHTML = "00:00";
     time.innerHTML = "00:00";
     stoptime = true;
   
@@ -176,10 +184,10 @@ function timerCycle() {
     }
     
     const time = document.getElementById('live_count');
-    const last = document.getElementById('last_count');
-    
+
     time.innerHTML = sec + ':' + ms;
-    last.innerHTML = sec + ':' + ms;
+
     setTimeout("timerCycle()", 100);
+    
   }
 }
